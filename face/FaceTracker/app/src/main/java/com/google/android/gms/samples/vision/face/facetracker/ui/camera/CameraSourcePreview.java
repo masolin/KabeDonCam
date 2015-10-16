@@ -49,6 +49,9 @@ public class CameraSourcePreview extends ViewGroup {
         mSurfaceView.getHolder().addCallback(new SurfaceCallback());
         addView(mSurfaceView);
     }
+    public void takePicture(CameraSource.PictureCallback callback) {
+        mCameraSource.takePicture(null, callback);
+    }
 
     public void start(CameraSource cameraSource) throws IOException {
         if (cameraSource == null) {
@@ -56,7 +59,6 @@ public class CameraSourcePreview extends ViewGroup {
         }
 
         mCameraSource = cameraSource;
-
         if (mCameraSource != null) {
             mStartRequested = true;
             startIfReady();

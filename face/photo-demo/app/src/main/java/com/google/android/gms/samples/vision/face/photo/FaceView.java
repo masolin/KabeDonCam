@@ -89,14 +89,14 @@ public class FaceView extends View {
         Paint paint = new Paint();
         paint.setColor(Color.GREEN);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(5);
+        paint.setStrokeWidth(2);
 
         for (int i = 0; i < mFaces.size(); ++i) {
             Face face = mFaces.valueAt(i);
             for (Landmark landmark : face.getLandmarks()) {
                 int cx = (int) (landmark.getPosition().x * scale);
                 int cy = (int) (landmark.getPosition().y * scale);
-                canvas.drawCircle(cx, cy, 10, paint);
+                canvas.drawCircle(cx, cy, 3, paint);
             }
         }
     }
